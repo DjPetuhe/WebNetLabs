@@ -21,8 +21,6 @@ OwnSortedList/MyStructureShow/obj/Debug/net6.0/MyStructureShow.GlobalUsings.g.cs
 
 OwnSortedList/MyStructureShow/obj/Debug/net6.0/
 
-*.json
-
 *.props
 
 *.targets
@@ -80,3 +78,25 @@ TaskPlanner/TaskPlanner.BLL/bin/Debug/net6.0/
 TaskPlanner/TaskPlanner.PL/obj/Debug/net6.0/
 
 TaskPlanner/.vs/TaskPlanner/config/applicationhost.config
+
+TaskPlanner/TaskPlanner.PL/TaskPlanner.PL.csproj.user
+
+TaskPlanner/TaskPlanner.PL/obj/
+
+TaskPlanner/TaskPlanner.PL/bin/Debug/net6.0/
+
+OwnSortedList/MyStructureShow/obj/
+
+OwnSortedList/OwnSortedList.Tests/obj/
+
+OwnSortedList/OwnSortedList/obj/
+
+TaskPlanner/TaskPlanner.BLL.Tests/obj/
+
+TaskPlanner/TaskPlanner.DAL/obj/
+
+TaskPlanner/TaskPlanner.BLL/obj/
+
+*.user
+
+TaskPlanner/TaskPlanner.PL/Properties/serviceDependencies.local.json
