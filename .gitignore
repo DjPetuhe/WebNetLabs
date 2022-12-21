@@ -78,3 +78,5 @@ TaskPlanner/TaskPlanner.BLL.Tests/bin/Debug/net6.0/
 TaskPlanner/TaskPlanner.BLL/bin/Debug/net6.0/
 
 TaskPlanner/TaskPlanner.PL/obj/Debug/net6.0/
+
+TaskPlanner/.vs/TaskPlanner/config/applicationhost.config

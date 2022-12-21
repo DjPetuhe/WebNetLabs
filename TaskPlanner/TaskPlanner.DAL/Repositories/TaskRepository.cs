@@ -8,7 +8,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace TaskPlanner.DAL.Repositories
 {
-    internal class TaskRepository : ITaskRepository
+    public class TaskRepository : ITaskRepository
     {
         private readonly TaskPlannerDbContext _context;
 
@@ -48,6 +48,11 @@ namespace TaskPlanner.DAL.Repositories
         public Task<Entities.Task?> GetById(int taskID)
         {
             return _context.Tasks.FindAsync(taskID).AsTask();
+        }
+
+        public Task<Entities.Task?> GetByIdWithUsers(int taskID)
+        {
+            return _context.Tasks.Include(t => t.Users).FirstOrDefaultAsync(t => t.TaskID == taskID);
         }
     }
 }

@@ -13,5 +13,7 @@ namespace TaskPlanner.DAL.Interfaces
         public void Update(Project project);
         public Task<List<Project>> GetAll();
         public Task<Project?> GetById(int projectID);
+        public Task<Project?> GetByIdWithUsers(int projectID);
+        public Task<Project?> GetByIdWithTasks(int projectID);
     }
 }

@@ -9,7 +9,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace TaskPlanner.DAL.Repositories
 {
-    internal class ProjectRepository : IProjectRepository
+    public class ProjectRepository : IProjectRepository
     {
         private readonly TaskPlannerDbContext _context;
 
@@ -49,6 +49,18 @@ namespace TaskPlanner.DAL.Repositories
         public Task<Project?> GetById(int projectID)
         {
             return _context.Projects.FindAsync(projectID).AsTask();
+        }
+
+        public Task<Project?> GetByIdWithUsers(int projectID)
+        {
+            return _context.Projects.Include(p => p.Users)
+                                    .FirstOrDefaultAsync(p => p.ProjectID == projectID);
+        }
+
+        public Task<Project?> GetByIdWithTasks(int projectID)
+        {
+            return _context.Projects.Include(p => p.Tasks)
+                                    .FirstOrDefaultAsync(p => p.ProjectID == projectID);
         }
     }
 }

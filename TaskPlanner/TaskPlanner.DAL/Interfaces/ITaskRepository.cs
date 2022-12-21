@@ -12,5 +12,6 @@ namespace TaskPlanner.DAL.Interfaces
         public void Update(Entities.Task task);
         public Task<List<Entities.Task>> GetAll();
         public Task<Entities.Task?> GetById(int taskID);
+        public Task<Entities.Task?> GetByIdWithUsers(int taskID);
     }
 }
