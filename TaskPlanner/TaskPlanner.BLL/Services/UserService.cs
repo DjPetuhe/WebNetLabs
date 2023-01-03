@@ -72,6 +72,7 @@ namespace TaskPlanner.BLL.Services
 
             user.FirstName = updateUserDto.FirstName;
             user.LastName = updateUserDto.LastName;
+            user.UserName = updateUserDto.UserName;
             user.Passwords = updateUserDto.Passwords;
 
             _unitOfWork.UserRepository.Update(user);
@@ -155,7 +156,7 @@ namespace TaskPlanner.BLL.Services
                               ?? throw new KeyNotFoundException($"User with id {userID} was not found!");
 
             if (user.Projects is not null && !user.Projects.Any(u => u.ProjectID == projectID))
-                throw new TaskNotTakenException($"User with id {userID} is not a memeber of project with id {projectID}!");
+                throw new ProjectNotTakenException($"User with id {userID} is not a memeber of project with id {projectID}!");
 
             if (user.Tasks is not null)
             {
